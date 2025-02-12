@@ -1,7 +1,7 @@
 <div align="center">
     <h1 align="center">NeuroVision - CNN Visualizer</h1>
 
-    Website → [shishir-ashok.github.io/interactive-cnn/](https://shishir-ashok.github.io/interactive-cnn/)
+Website → [shishir-ashok.github.io/interactive-cnn/](https://shishir-ashok.github.io/interactive-cnn/)
 </div>
 **NeuroVision** is an interactive tool designed to help you understand how Convolutional Neural Networks (CNNs) work. By visualizing how a filter (or pooling operation) moves over an input matrix (representing an image), this tool demonstrates how the output (feature map) is generated.
 
