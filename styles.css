@@ -1,0 +1,169 @@
+:root {
+  --primary: #4185f4;
+  --background: #ffffff;
+  --surface: #f8faff;
+  --border: #e3eefd;
+  --text-primary: #1a2a4a;
+  --text-secondary: #5c6f88;
+  --pause-color: #e74c3c;   
+  --resume-color: #2ecc71;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--primary) 0%, #3b78e7 100%);
+  border-radius: 24px;
+  color: white;
+  box-shadow: 0 8px 24px rgba(65, 133, 244, 0.15);
+}
+
+.header h1 {
+  font-weight: 700;
+  margin: 0 0 1rem;
+  font-size: 3.5rem;
+  letter-spacing: -0.05em;
+}
+
+.header p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.controls {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input,
+select,
+button {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Style for the pause/resume button */
+.pause-button {
+  background: var(--pause-color);
+}
+.pause-button.paused {
+  background: var(--resume-color);
+}
+
+.visualization {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.matrix-panel {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 2rem;
+  position: relative;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(65, 133, 244, 0.05);
+}
+
+.matrix-grid {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 2px;
+  will-change: transform;
+}
+
+.matrix-cell {
+  background: var(--background);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.matrix-cell.editable {
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(65, 133, 244, 0.05);
+}
+
+.matrix-cell.editable:hover {
+  background: rgba(65, 133, 244, 0.03);
+  transform: scale(1.05);
+}
+
+.matrix-cell.output-highlight {
+  z-index: 10;
+  background: rgba(65, 133, 244, 0.3) !important;
+  border: 2px solid var(--primary) !important;
+}
+
+.sliding-window {
+  position: absolute;
+  background: rgba(65, 133, 244, 0.1);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  transition: transform 1.0s cubic-bezier(0.34, 1.0, 0.64, 1);
+  pointer-events: none;
+  box-sizing: border-box;
+  left: 2px;
+  top: 2px;
+}

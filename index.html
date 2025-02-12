@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroVision - CNN Visualizer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>NeuroVision</h1>
+      <p>Interactive Convolutional Neural Network Visualizer</p>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label>Matrix Size</label>
+        <input type="number" id="matrix-size" min="3" max="15" value="9" />
+      </div>
+      <div class="control-group">
+        <label>Filter Size</label>
+        <input type="number" id="filter-size" min="1" value="2" />
+      </div>
+      <div class="control-group">
+        <label>Stride</label>
+        <input type="number" id="stride" min="1" value="1" />
+      </div>
+      <div class="control-group">
+        <label>Padding</label>
+        <input type="number" id="padding" min="0" value="0" />
+      </div>
+      <div class="control-group">
+        <label>Operation</label>
+        <select id="operation">
+          <option value="conv">Convolution</option>
+          <option value="maxpool">Max Pooling</option>
+          <option value="avgpool">Average Pooling</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <button onclick="randomizeMatrix()">⟳ Randomize Matrix</button>
+      </div>
+      <div class="control-group">
+        <!-- Pause/Resume Button -->
+        <button id="pause-resume" class="pause-button">❚❚ Pause</button>
+      </div>
+    </div>
+
+    <div class="visualization">
+      <div class="matrix-panel">
+        <div class="matrix-grid" id="input-grid"></div>
+        <div class="sliding-window" id="sliding-window"></div>
+      </div>
+      <div class="matrix-panel">
+        <div class="matrix-grid" id="output-grid"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script> 
+</body>
+</html>
