@@ -17,7 +17,7 @@ Website → [shishir-ashok.github.io/interactive-cnn/](https://shishir-ashok.git
     - **Convolution:** Computes the sum of the values covered by the filter.
     - **Max Pooling:** Chooses the maximum value in the filter window.
     - **Average Pooling:** Computes the (rounded) average value in the filter window.
-  - Click on any cell within the input matrix to change its value
+  - Click on any cell within the input matrix to change its value.
 - **Animated Sliding Window:**  
   A smoothly animated sliding window moves over the input matrix. As it moves, the corresponding cell in the output matrix is highlighted.
 - **Pause/Resume Functionality:**  
